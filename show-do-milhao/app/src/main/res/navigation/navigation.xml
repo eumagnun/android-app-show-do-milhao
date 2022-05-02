@@ -15,5 +15,28 @@
     <fragment
         android:id="@+id/jogoFragment"
         android:name="br.com.danielamaral.show_do_milhao.JogoFragment"
-        android:label="JogoFragment" />
+        android:label="JogoFragment" >
+        <action
+            android:id="@+id/action_jogoFragment_to_ganhouFragment"
+            app:destination="@id/ganhouFragment" />
+        <action
+            android:id="@+id/action_jogoFragment_to_perdeuFragment"
+            app:destination="@id/perdeuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perdeuFragment"
+        android:name="br.com.danielamaral.show_do_milhao.PerdeuFragment"
+        android:label="PerdeuFragment" >
+        <action
+            android:id="@+id/action_perdeuFragment_to_jogoFragment"
+            app:destination="@id/jogoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ganhouFragment"
+        android:name="br.com.danielamaral.show_do_milhao.GanhouFragment"
+        android:label="GanhouFragment" >
+        <action
+            android:id="@+id/action_ganhouFragment_to_jogoFragment"
+            app:destination="@id/jogoFragment" />
+    </fragment>
 </navigation>

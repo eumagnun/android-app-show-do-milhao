@@ -26,6 +26,10 @@ import androidx.databinding.DataBindingUtil
 //todo fragment-intro  criar segundo fragment
 //todo fragment-intro  DESAFIO PARA CASA:  IMPLEMENTAR ALEATORIEDADE
 //todo fragment-intro  implementar navegacao da home para o game
+//todo fragment-intro  DESAFIO PARA CASA:  IMPLEMENTAR DEMAIS NAVEGACOES
+//todo fragment-intro  DESAFIO PARA CASA:  PORQUE AS PERGUNTAS NAO ESTÃO MUDANDO?
+//todo fragment-intro  Falar do ciclo de vida do fragment
+//todo corrigir chamada da aleatoriedade
 
 
 

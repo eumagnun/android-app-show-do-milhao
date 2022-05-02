@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import br.com.danielamaral.show_do_milhao.databinding.FragmentJogoBinding
 
 
@@ -33,12 +34,17 @@ class JogoFragment : Fragment() {
                 else -> respostaSelecionada = binding.rbResposta3.text.toString()
             }
 
-            validarResposta(respostaSelecionada)
+            if(validarResposta(respostaSelecionada)){
+                view?.findNavController()?.navigate(R.id.action_jogoFragment_to_ganhouFragment)
+            }else{
+                view?.findNavController()?.navigate(R.id.action_jogoFragment_to_perdeuFragment)
+            }
         }
         return binding.root
     }
 
-    private fun validarResposta(respostaSelecionada: String) {
+
+    private fun validarResposta(respostaSelecionada: String):Boolean {
         var isRespostaCorreta = false
         Database.perguntas[0].respostas.forEach {resposta ->
             if(respostaSelecionada.equals(resposta.texto) && resposta.correta){
@@ -46,6 +52,7 @@ class JogoFragment : Fragment() {
             }
         }
         Log.i("RESPOSTA","$respostaSelecionada.CORRETO? ${isRespostaCorreta}")
+        return isRespostaCorreta
     }
 
 }

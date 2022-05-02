@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import br.com.danielamaral.show_do_milhao.databinding.ActivityMainBinding
 
 //todo fragment-intro explicar as motivações do fragment
 //todo fragment-intro explicar que vamos usar um novo modo de navegação entre telas
@@ -30,10 +33,11 @@ import androidx.databinding.DataBindingUtil
 //todo fragment-intro  DESAFIO PARA CASA:  PORQUE AS PERGUNTAS NAO ESTÃO MUDANDO?
 //todo fragment-intro  Falar do ciclo de vida do fragment
 //todo corrigir chamada da aleatoriedade
-
 //todo single activity ???
 //https://oozou.com/blog/reasons-to-use-android-single-activity-architecture-with-navigation-component-36
 //https://www.youtube.com/watch?v=2k8x8V77CrU
+//todo ajusta back action em navigation. Telas de endgame deve direcionar para home
+//todo implementar back button nos fragments
 
 
 class MainActivity : AppCompatActivity() {
@@ -41,5 +45,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //implementar aqui apenas depois de "implementar back button nos fragments"
+        val navController = this.findNavController(R.id.fNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this,navController)
+    }
+
+    //implementar aqui apenas depois de "implementar back button nos fragments"
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.fNavHostFragment)
+        return navController.navigateUp()
     }
 }

@@ -14,18 +14,17 @@ import br.com.danielamaral.show_do_milhao.model.Pergunta
 
 class JogoFragment : Fragment() {
 
-    var perguntaSelecionada = embaralharPerguntasRepostas(Database.perguntas)
+    private lateinit var binding: FragmentJogoBinding
+    private lateinit var perguntaSelecionada:Pergunta
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding: FragmentJogoBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_jogo, container, false)
 
-        binding.tvPergunta.text = perguntaSelecionada.texto
-        binding.rbResposta1.text = perguntaSelecionada.respostas[0].texto
-        binding.rbResposta2.text = perguntaSelecionada.respostas[1].texto
-        binding.rbResposta3.text = perguntaSelecionada.respostas[2].texto
+        binding= DataBindingUtil.inflate(inflater, R.layout.fragment_jogo, container, false)
+
+        atualizarPergunta(binding)
 
         binding.btResponder.setOnClickListener {
             val checkedId = binding.rgRespostas.checkedRadioButtonId
@@ -47,12 +46,12 @@ class JogoFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        perguntaSelecionada = embaralharPerguntasRepostas(Database.perguntas)
+        atualizarPergunta(binding)
     }
 
     private fun validarResposta(respostaSelecionada: String):Boolean {
         var isRespostaCorreta = false
-        Database.perguntas[0].respostas.forEach { resposta ->
+        perguntaSelecionada.respostas.forEach { resposta ->
             if (respostaSelecionada.equals(resposta.texto) && resposta.correta) {
                 isRespostaCorreta = true
             }
@@ -66,6 +65,14 @@ class JogoFragment : Fragment() {
         val pergunta = perguntas[0]
         pergunta.respostas =  pergunta.respostas.shuffled()
         return pergunta
+    }
+
+    private fun atualizarPergunta(binding:FragmentJogoBinding){
+        perguntaSelecionada = embaralharPerguntasRepostas(Database.perguntas)
+        binding.tvPergunta.text = perguntaSelecionada.texto
+        binding.rbResposta1.text = perguntaSelecionada.respostas[0].texto
+        binding.rbResposta2.text = perguntaSelecionada.respostas[1].texto
+        binding.rbResposta3.text = perguntaSelecionada.respostas[2].texto
     }
 
 }

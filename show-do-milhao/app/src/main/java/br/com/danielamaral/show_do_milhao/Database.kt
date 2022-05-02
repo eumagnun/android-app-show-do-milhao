@@ -9,7 +9,7 @@ class Database {
         val perguntas = mutableListOf<Pergunta>()
 
         init {
-            val perguntaA = "Qual o time sem mundial?"
+            val perguntaA = "Qual time não tem mundial?"
             val respostaA1 = Resposta("Corinthians", false)
             val respostaA2 = Resposta("Palmeiras", true)
             val respostaA3 = Resposta("Vasco", false)
@@ -17,16 +17,16 @@ class Database {
             perguntas.add(Pergunta(perguntaA, listaRespostasA))
 
             val perguntaB = "Qual a melhor banda do mundo?"
-            val respostaB1 = Resposta("Could Play", false)
-            val respostaB2 = Resposta("Metallica", true)
+            val respostaB1 = Resposta("Could Play", true)
+            val respostaB2 = Resposta("Metallica", false)
             val respostaB3 = Resposta("Chiclete com Banana", false)
             val listaRespostasB = listOf(respostaB1, respostaB2, respostaB3)
             perguntas.add(Pergunta(perguntaB, listaRespostasB))
 
-            val perguntaC = "Qual a melhor banda do mundo?"
-            val respostaC1 = Resposta("Could Play", true)
-            val respostaC2 = Resposta("Metallica", false)
-            val respostaC3 = Resposta("Chiclete com Banana", false)
+            val perguntaC = "Qual o sexto planeta mais próximo do sol?"
+            val respostaC1 = Resposta("Jupiter", false)
+            val respostaC2 = Resposta("Marte", false)
+            val respostaC3 = Resposta("Saturno", true)
             val listaRespostasC = listOf(respostaC1, respostaC2, respostaC3)
             perguntas.add(Pergunta(perguntaC, listaRespostasC))
         }

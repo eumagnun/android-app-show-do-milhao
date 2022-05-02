@@ -31,6 +31,9 @@ import androidx.databinding.DataBindingUtil
 //todo fragment-intro  Falar do ciclo de vida do fragment
 //todo corrigir chamada da aleatoriedade
 
+//todo single activity ???
+//https://oozou.com/blog/reasons-to-use-android-single-activity-architecture-with-navigation-component-36
+//https://www.youtube.com/watch?v=2k8x8V77CrU
 
 
 class MainActivity : AppCompatActivity() {

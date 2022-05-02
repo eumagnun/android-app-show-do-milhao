@@ -25,6 +25,7 @@ import androidx.databinding.DataBindingUtil
 //todo fragment-intro  alterar a navegacao via designer do navigation
 //todo fragment-intro  criar segundo fragment
 //todo fragment-intro  DESAFIO PARA CASA:  IMPLEMENTAR ALEATORIEDADE
+//todo fragment-intro  implementar navegacao da home para o game
 
 
 

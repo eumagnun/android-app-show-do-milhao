@@ -18,10 +18,12 @@
         android:label="JogoFragment" >
         <action
             android:id="@+id/action_jogoFragment_to_ganhouFragment"
-            app:destination="@id/ganhouFragment" />
+            app:destination="@id/ganhouFragment"
+            app:popUpTo="@id/homeFragment" />
         <action
             android:id="@+id/action_jogoFragment_to_perdeuFragment"
-            app:destination="@id/perdeuFragment" />
+            app:destination="@id/perdeuFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/perdeuFragment"
@@ -29,7 +31,8 @@
         android:label="PerdeuFragment" >
         <action
             android:id="@+id/action_perdeuFragment_to_jogoFragment"
-            app:destination="@id/jogoFragment" />
+            app:destination="@id/jogoFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/ganhouFragment"
@@ -37,6 +40,7 @@
         android:label="GanhouFragment" >
         <action
             android:id="@+id/action_ganhouFragment_to_jogoFragment"
-            app:destination="@id/jogoFragment" />
+            app:destination="@id/jogoFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
 </navigation>

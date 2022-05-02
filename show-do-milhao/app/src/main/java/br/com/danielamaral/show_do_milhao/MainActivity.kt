@@ -23,7 +23,9 @@ import androidx.databinding.DataBindingUtil
 //todo fragment-intro  alterar ID
 //todo fragment-intro  incluir atributo app:navGraph="@navigation/navigation" e app:defaultNavHost="true"
 //todo fragment-intro  alterar a navegacao via designer do navigation
-//todo criar segundo fragment
+//todo fragment-intro  criar segundo fragment
+//todo fragment-intro  DESAFIO PARA CASA:  IMPLEMENTAR ALEATORIEDADE
+
 
 
 class MainActivity : AppCompatActivity() {

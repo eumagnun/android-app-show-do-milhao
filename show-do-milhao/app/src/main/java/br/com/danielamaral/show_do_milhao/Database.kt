@@ -9,6 +9,7 @@ class Database {
     companion object {
         val perguntas = mutableListOf<Pergunta>()
         val jogador:Jogador = Jogador("")
+        var pontuacao:Int=0
 
 
         init {

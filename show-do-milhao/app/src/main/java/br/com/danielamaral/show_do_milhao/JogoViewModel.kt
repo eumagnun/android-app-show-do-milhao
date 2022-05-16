@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import br.com.danielamaral.show_do_milhao.model.Pergunta
 
 class JogoViewModel:ViewModel() {
+
     init{
         Log.i("GameViewModel","GameViewModel Created")
     }
@@ -27,6 +28,7 @@ class JogoViewModel:ViewModel() {
         perguntaSelecionada.respostas.forEach { resposta ->
             if (respostaSelecionada.equals(resposta.texto) && resposta.correta) {
                 isRespostaCorreta = true
+                Database.pontuacao=Database.pontuacao+1
             }
         }
         Log.i("RESPOSTA", "$respostaSelecionada.CORRETO? ${isRespostaCorreta}")

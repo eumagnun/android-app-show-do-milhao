@@ -25,7 +25,7 @@ class JogoFragment : Fragment() {
     ): View {
 
         binding= DataBindingUtil.inflate(inflater, R.layout.fragment_jogo, container, false)
-
+        binding.tvPlacar.text = " Placar: ${Database.pontuacao.toString()}"
         //1 singleton será gerado aqui.
         //sempre que o fragment for criado a instância préviamente criada do viewModel seá atribuida para a variável
         Log.i("GameFragment","ViewModelProvider invocado")
@@ -47,6 +47,8 @@ class JogoFragment : Fragment() {
             }else{
                 view?.findNavController()?.navigate(R.id.action_jogoFragment_to_perdeuFragment)
             }
+
+            binding.tvPlacar.text = " Placar: ${Database.pontuacao.toString()}"
         }
         return binding.root
     }

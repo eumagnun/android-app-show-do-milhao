@@ -42,7 +42,7 @@ class JogoFragment : Fragment() {
                 else -> respostaSelecionada = binding.rbResposta3.text.toString()
             }
 
-            if(validarResposta(respostaSelecionada)){
+            if(viewModel.validarResposta(perguntaSelecionada,respostaSelecionada)){
                 view?.findNavController()?.navigate(R.id.action_jogoFragment_to_ganhouFragment)
             }else{
                 view?.findNavController()?.navigate(R.id.action_jogoFragment_to_perdeuFragment)
@@ -56,26 +56,10 @@ class JogoFragment : Fragment() {
         atualizarPergunta(binding)
     }
 
-    private fun validarResposta(respostaSelecionada: String):Boolean {
-        var isRespostaCorreta = false
-        perguntaSelecionada.respostas.forEach { resposta ->
-            if (respostaSelecionada.equals(resposta.texto) && resposta.correta) {
-                isRespostaCorreta = true
-            }
-        }
-        Log.i("RESPOSTA", "$respostaSelecionada.CORRETO? ${isRespostaCorreta}")
-        return isRespostaCorreta
-    }
 
-    private fun embaralharPerguntasRepostas(perguntas: MutableList<Pergunta>): Pergunta {
-        perguntas.shuffle()
-        val pergunta = perguntas[0]
-        pergunta.respostas =  pergunta.respostas.shuffled()
-        return pergunta
-    }
 
     private fun atualizarPergunta(binding:FragmentJogoBinding){
-        perguntaSelecionada = embaralharPerguntasRepostas(Database.perguntas)
+        perguntaSelecionada = viewModel.embaralharPerguntasRepostas(Database.perguntas)
         binding.tvPergunta.text = perguntaSelecionada.texto
         binding.rbResposta1.text = perguntaSelecionada.respostas[0].texto
         binding.rbResposta2.text = perguntaSelecionada.respostas[1].texto

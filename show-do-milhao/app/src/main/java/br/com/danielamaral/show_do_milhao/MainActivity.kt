@@ -51,12 +51,21 @@ import br.com.danielamaral.show_do_milhao.databinding.ActivityMainBinding
 //todo ajustar classe ganhou para passar valor
 //todo DESAFIO: implementa data variable da tela PERDEU
 
+//todo proposta do ViewModel
+//todo =>segregar responsabilidades: A VIEW (fragments ou acitivities não deve ser preocupar com lógica de negócio
+//      ou interação com recursos externos)
+//todo => lógica deve ficar no viewModel, view model sobrevive a rotação de tela
+//todo => a view(fragmente) deve apenas capturar inputs do usuários e gerar outputs quando necessário
+//todo => views menos densa, menos complexas, mais faceis de testar
+//todo => viewModels não devem ter referencias para fragments ou activities a fim de evitar alto acomplamento
+
 
 //todo view model e livedata
 //todo incluir dependência
 //todo criar classe ViewModel
 //todo criar variável ViewModel no fragment
 //todo injetar viewModel no fragment através do ViewModelProvider
+//todo mostrar comportamento ao rotacrionar o celular várias vezes
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

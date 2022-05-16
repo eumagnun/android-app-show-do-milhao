@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import br.com.danielamaral.show_do_milhao.databinding.FragmentJogoBinding
 import br.com.danielamaral.show_do_milhao.model.Pergunta
@@ -16,6 +17,7 @@ class JogoFragment : Fragment() {
 
     private lateinit var binding: FragmentJogoBinding
     private lateinit var perguntaSelecionada:Pergunta
+    private lateinit var viewModel: JogoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,6 +25,11 @@ class JogoFragment : Fragment() {
     ): View {
 
         binding= DataBindingUtil.inflate(inflater, R.layout.fragment_jogo, container, false)
+
+        //1 singleton será gerado aqui.
+        //sempre que o fragment for criado a instância préviamente criada do viewModel seá atribuida para a variável
+        Log.i("GameFragment","ViewModelProvider invocado")
+        viewModel = ViewModelProvider(this).get(JogoViewModel::class.java)
 
         atualizarPergunta(binding)
 

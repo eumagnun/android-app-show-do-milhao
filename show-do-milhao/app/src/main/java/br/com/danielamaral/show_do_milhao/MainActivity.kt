@@ -47,9 +47,16 @@ import br.com.danielamaral.show_do_milhao.databinding.ActivityMainBinding
 //todo alterar database
 //todo setar jogador no banco fake
 //todo implementar snackbar
-//todo implementa data variable da tela de vitoriau
+//todo implementa data variable da tela de GANHOU
 //todo ajustar classe ganhou para passar valor
-//todo DESAFIO: implementa data variable da tela de vitoriau
+//todo DESAFIO: implementa data variable da tela PERDEU
+
+
+//todo view model e livedata
+//todo incluir dependência
+//todo criar classe ViewModel
+//todo criar variável ViewModel no fragment
+//todo injetar viewModel no fragment através do ViewModelProvider
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

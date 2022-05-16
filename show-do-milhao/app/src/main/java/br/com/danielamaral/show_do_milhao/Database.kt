@@ -1,5 +1,6 @@
 package br.com.danielamaral.show_do_milhao
 
+import br.com.danielamaral.show_do_milhao.model.Jogador
 import br.com.danielamaral.show_do_milhao.model.Pergunta
 import br.com.danielamaral.show_do_milhao.model.Resposta
 
@@ -7,6 +8,8 @@ class Database {
 
     companion object {
         val perguntas = mutableListOf<Pergunta>()
+        val jogador:Jogador = Jogador("")
+
 
         init {
             val perguntaA = "Qual time não tem mundial?"

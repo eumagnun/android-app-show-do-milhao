@@ -18,6 +18,7 @@ class GanhouFragment : Fragment() {
     ): View? {
         val binding:FragmentGanhouBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_ganhou,container,false)
 
+        binding.jogador = Database.jogador
         binding.btJogarDeNovo.setOnClickListener {
             view?.findNavController()?.navigate(R.id.action_ganhouFragment_to_jogoFragment)
         }

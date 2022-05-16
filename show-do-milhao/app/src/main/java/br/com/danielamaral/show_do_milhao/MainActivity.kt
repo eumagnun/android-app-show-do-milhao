@@ -40,6 +40,17 @@ import br.com.danielamaral.show_do_milhao.databinding.ActivityMainBinding
 //todo implementar back button nos fragments
 
 
+//todo NOVAS TAREFAS
+//altear layout tela de vitoria e derrota para exibir nome do playr
+//altearr layout tela de hoe
+//todo criar classe jogador
+//todo alterar database
+//todo setar jogador no banco fake
+//todo implementar snackbar
+//todo implementa data variable da tela de vitoriau
+//todo ajustar classe ganhou para passar valor
+//todo DESAFIO: implementa data variable da tela de vitoriau
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
